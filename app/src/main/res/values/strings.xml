@@ -1,0 +1,13 @@
+<resources>
+    <string name="button_check">Sprawdź przekierowania</string>
+    <string name="app_name">Przekierowanie połączeń</string>
+    <string name="button_run">Uruchom przekierowania</string>
+    <string name="button_cancel">Anuluj przekierowania</string>
+    <string name="button_add">+Dodaj</string>
+    <string name="title_activity_create">CreateActivity</string>
+    <string name="button_save">Zapisz</string>
+    <string name="labelPnPt19">Poniedziałek - Piątek godzina (19:00)</string>
+    <string name="labelPnPt8">Poniedziałek - Piątek godzina (8:00)</string>
+    <string name="readme">Przy ustawieniu "0" zostanie wyslana komenda ##21# - wyłącza przekierowania. Włączenie przekierowania:  **21*+4850xxxxxxx#.  Sprawdzenie stanu: *#21#</string>
+    <string name="button_disable_actual_redir">Anuluj aktualne przekierowanie</string>
+</resources>
