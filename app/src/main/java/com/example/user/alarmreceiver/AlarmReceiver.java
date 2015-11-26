@@ -140,6 +140,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         Integer hour1=0,
                 hour2=0;
         String mmiCode;
+        String zero = "0";
         Calendar calendar = Calendar.getInstance();
         //aktualny dzien tygodnia i godzina
         int day = calendar.get(Calendar.DAY_OF_WEEK);
@@ -160,7 +161,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         // If current day is Sunday, day=1. Saturday, day=7.
         if(day != 1 && day != 7){
             //ok zrobmy cos
-            if(hour == hour1 && phone1!="" && phone1!="0"){
+            if(hour == hour1 && "" != phone1 && zero != phone1){
                 Log.d(TAG, phone1);
                 mmiCode =  prepareRedirectCommand(phone1);
                 Log.d(TAG, "---------------------");
@@ -168,17 +169,17 @@ public class AlarmReceiver extends BroadcastReceiver {
                 callPhone(context, intent, mmiCode);
 
                 buildNotification(context, intent,"Przekierowanie na nr:" + phone1, "Godzina: " + hour + " kod: " + mmiCode );
-            }else  if(hour == hour1 && phone1=="0"){
+            }else  if(hour == hour1 && phone1.equals(zero)){
                 //usun aktualne przekierowanie
                 mmiCode = removeRedirectCommand();
                 callPhone(context, intent, mmiCode);
                 buildNotification(context, intent, "Usunięcie przekierowania", "Godzina: " + hour + " kod: " + mmiCode);
             }
-            if(hour == hour2 && phone2!="" && phone2!="0"){
+            if(hour == hour2 && "" != phone2 && !phone2.equals(zero)){
                 mmiCode = prepareRedirectCommand(phone2);
                 callPhone(context, intent, mmiCode);
                 buildNotification(context, intent, "Przekierowanie na nr: " + phone2, "Godzina: " + hour + " kod: " + mmiCode);
-            } else if(hour == hour2 && phone2=="0"){
+            } else if(hour == hour2 && phone2.equals(zero)){
                 //usun aktualne przekierowanie
                 mmiCode = removeRedirectCommand();
                 callPhone(context, intent, mmiCode);

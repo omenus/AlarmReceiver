@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, hour);
         calendar.set(Calendar.MINUTE, 0);
-//AlarmManager.INTERVAL_HOUR
+        //AlarmManager.INTERVAL_HOUR
         manager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
                 1000*3600, pendingIntent);
     }
@@ -127,7 +127,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         phone1 = phoneInput1.getText().toString();
         phone2 = phoneInput2.getText().toString();
 
-
         hour1 = Integer.parseInt(hourInput1.getText().toString());
         hour2 = Integer.parseInt(hourInput2.getText().toString());
 
@@ -162,8 +161,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         phoneInput1.setText(phone1.toString());
         phoneInput2.setText(phone2.toString());
-
-
 
         hourInput1.setText(hour1.toString());
         hourInput2.setText(hour2.toString());
